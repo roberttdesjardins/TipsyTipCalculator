@@ -39,15 +39,18 @@
                                     <constraint firstItem="6HF-Q4-htS" firstAttribute="centerX" secondItem="KSa-Pw-Pe9" secondAttribute="centerX" id="mlF-YH-Qeb"/>
                                 </constraints>
                             </view>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Enter bill amount here" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2my-0b-g0s">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter bill amount here" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2my-0b-g0s">
                                 <rect key="frame" x="10.5" y="90" width="371.5" height="50"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" red="0.83086798729630296" green="0.83086798729630296" blue="0.83086798729630296" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="NB2-lz-GJY"/>
                                 </constraints>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" red="0.0" green="0.79215686269999996" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                <connections>
+                                    <action selector="billAmountChange:" destination="BYZ-38-t0r" eventType="editingChanged" id="wxz-h1-L30"/>
+                                </connections>
                             </textField>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="sVe-Dv-J7U">
                                 <rect key="frame" x="10.5" y="186" width="371.5" height="281"/>
@@ -64,11 +67,14 @@
                                                 <color key="textColor" red="0.0" green="0.79215686269999996" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="h1u-Hy-VRy">
+                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.14999999999999999" minValue="0.050000000000000003" maxValue="0.34999999999999998" translatesAutoresizingMaskIntoConstraints="NO" id="h1u-Hy-VRy">
                                                 <rect key="frame" x="84" y="0.0" width="289.5" height="57"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="237" id="Rre-WV-Nhl"/>
                                                 </constraints>
+                                                <connections>
+                                                    <action selector="tipPercentChange:" destination="BYZ-38-t0r" eventType="valueChanged" id="eIK-ak-rZx"/>
+                                                </connections>
                                             </slider>
                                         </subviews>
                                     </stackView>
@@ -185,6 +191,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="enterBillTF" destination="2my-0b-g0s" id="hQN-B0-f1q"/>
+                        <outlet property="tipAmountLbl" destination="Umb-zM-Wot" id="Kw4-Mt-Epc"/>
+                        <outlet property="tipPercentLbl" destination="gkP-nT-U2K" id="PJ3-Zn-Y9R"/>
+                        <outlet property="tipPercentSlider" destination="h1u-Hy-VRy" id="KDT-Pp-iZr"/>
+                        <outlet property="totalAmount" destination="iTY-DM-u88" id="2lu-fy-Uqq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
